@@ -9,7 +9,7 @@
 }
 
 #container strong {
-  font-size: 20px;
+  font-size: 30px;
   line-height: 26px;
 }
 
@@ -41,4 +41,8 @@
 
 ion-content {
   --background: #919993; /* Cambia el color de fondo aquí */
+}
+
+ion-title {
+  font-size: 40px; /* Cambia el tamaño de fuente aquí */
 }
