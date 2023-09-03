@@ -17,11 +17,28 @@
   font-size: 16px;
   line-height: 22px;
 
-  color: #8c8c8c;
+  color: #f042c4;
 
   margin: 0;
 }
 
 #container a {
   text-decoration: none;
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animated-title {
+  animation: slideInLeft 1s ease-in-out; /* Nombre de la animación, duración y temporización */
+}
+
+ion-content {
+  --background: #919993; /* Cambia el color de fondo aquí */
 }

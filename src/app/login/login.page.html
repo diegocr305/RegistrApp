@@ -7,15 +7,15 @@
   <ion-content [fullscreen]="true">
     <ion-list>
       <ion-item>
-        <ion-input [(ngModel)] ="user.usuario" label="Correo " type="email" placeholder="correo@duocuc.cl"></ion-input>
+        <ion-input class="animated-title" [(ngModel)] ="user.usuario" label="Correo " type="email" placeholder="correo@duocuc.cl"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input [(ngModel)] ="user.password" label="Contraseña " type="password" value="contraseña"></ion-input>
+        <ion-input class="animated-title"  [(ngModel)] ="user.password" label="Contraseña " type="password" value="contraseña"></ion-input>
       </ion-item>
 
-      <ion-button (click)=" ingresar()">ENTRAR</ion-button> 
-      <ion-button class="animated bounce"  href="/home">SALIR</ion-button>
+      <ion-button class="animated-title" (click)=" ingresar()">ENTRAR</ion-button> 
+      <ion-button class="animated-title"  href="/home">SALIR</ion-button>
     </ion-list>
 </ion-content>
 
