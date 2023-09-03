@@ -12,6 +12,7 @@ import { Alumno } from '../models/alumno';
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
+
 export class LoginPage implements OnInit {
 
   ListUsuario: Alumno[] = [
@@ -39,8 +40,10 @@ export class LoginPage implements OnInit {
           }
         }
         this.router.navigate(['/home'], navigationExtras);
+        return;
       }
-
     }
+    // Mensaje de error si no se encuentra el usuario
+    console.error('Usuario o contraseña incorrectos');
   }
 }
