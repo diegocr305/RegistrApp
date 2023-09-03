@@ -12,6 +12,11 @@ import { IonicModule } from '@ionic/angular';
 })
 export class RecuperarcontrasenaPage implements OnInit {
 
+  user={
+    usuario: "",
+    newPassword: ""
+  }
+
   constructor() { }
 
   ngOnInit() {
