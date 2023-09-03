@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { Profesor } from '../models/profesor';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-loginprofesor',
@@ -19,7 +20,7 @@ export class LoginprofesorPage implements OnInit {
     password: ""
   }
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -28,8 +29,24 @@ export class LoginprofesorPage implements OnInit {
     for (let i = 0; i < this.ListProfesores.length; i++) {
       if (this.ListProfesores[i].correoElectronico === this.user.usuario && this.ListProfesores[i].contrasena == this.user.password) {
         console.log(this.ListProfesores[i]);
-        this.router.navigate(['/home']);
+        let navigationExtras: NavigationExtras = {
+          state: {
+            user: this.ListProfesores[i]
+          }
+        }
+        this.router.navigate(['/home'], navigationExtras);
+      } else {
+        this.presentToast("Usuario o contraseña incorrecta")
       }
     }
+  }
+
+
+  async presentToast(menssage: string, duration: number = 5000) {//creacion de una funcion asincronica
+    let toast = this.toastController.create({ //creamos una variable toast que se inicializa llamando al metodo create 
+      message: menssage,
+      duration: duration
+    });
+    (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
   }
 }
