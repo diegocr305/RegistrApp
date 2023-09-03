@@ -7,14 +7,14 @@
   <ion-content [fullscreen]="true">
     <ion-list>
       <ion-item>
-        <ion-input label="Correo " type="email" placeholder="correo@duocuc.cl"></ion-input>
+        <ion-input [(ngmodel)] ="user.usuario" label="Correo " type="email" placeholder="correo@duocuc.cl"></ion-input>
       </ion-item>
 
       <ion-item>
-        <ion-input label="Contraseña " type="password" value="contraseña"></ion-input>
+        <ion-input [(ngmodel)] ="user.password"  label="Contraseña " type="password" value="contraseña"></ion-input>
       </ion-item>
 
-      <ion-button>ENTRAR</ion-button> 
+      <ion-button (click)=" ingresar()">ENTRAR</ion-button> 
       <ion-button href="/home">SALIR</ion-button>
     </ion-list>
 </ion-content>
