@@ -21,5 +21,13 @@ export const routes: Routes = [
     path: 'loginprofesor',
     loadComponent: () => import('./loginprofesor/loginprofesor.page').then( m => m.LoginprofesorPage)
   },
+  {
+    path: 'perfil-profesor',
+    loadComponent: () => import('./perfil-profesor/perfil-profesor.page').then( m => m.PerfilProfesorPage)
+  },
+  {
+    path: 'perfil-alumno',
+    loadComponent: () => import('./perfil-alumno/perfil-alumno.page').then( m => m.PerfilAlumnoPage)
+  },
 
 ];
