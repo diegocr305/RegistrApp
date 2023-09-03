@@ -13,5 +13,13 @@ export const routes: Routes = [
   {
     path: 'login',
     loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
+  },  {
+    path: 'recuperarcontrasena',
+    loadComponent: () => import('./recuperarcontrasena/recuperarcontrasena.page').then( m => m.RecuperarcontrasenaPage)
   },
+  {
+    path: 'loginprofesor',
+    loadComponent: () => import('./loginprofesor/loginprofesor.page').then( m => m.LoginprofesorPage)
+  },
+
 ];
