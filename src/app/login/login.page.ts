@@ -25,7 +25,7 @@ export class LoginPage implements OnInit {
     password: ""
   }
 
-  constructor(private router: Router,public toastController: ToastController) { }
+  constructor(private router: Router, public toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -40,23 +40,19 @@ export class LoginPage implements OnInit {
           }
         }
         this.router.navigate(['/home'], navigationExtras);
-<<<<<<< HEAD
-        return;
-      }
-=======
-      }else{
+      } else {
         this.presentToast("Usuario o contraseña incorrecta")
-     }
+      }
 
->>>>>>> main
+
     }
     // Mensaje de error si no se encuentra el usuario
     console.error('Usuario o contraseña incorrectos');
   }
-  async presentToast(menssage: string, duration:number = 5000){//creacion de una funcion asincronica
+  async presentToast(menssage: string, duration: number = 5000) {//creacion de una funcion asincronica
     let toast = this.toastController.create({ //creamos una variable toast que se inicializa llamando al metodo create 
       message: menssage,
-      duration: duration     
+      duration: duration
     });
     (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
   }
