@@ -37,10 +37,12 @@
 
 .animated-title {
   animation: slideInLeft 1s ease-in-out; /* Nombre de la animación, duración y temporización */
+  display: flex;
+  margin: 20px;
 }
 
 ion-content {
-  --background: #919993; /* Cambia el color de fondo aquí */
+  --background: #dee0df; /* Cambia el color de fondo aquí */
 }
 
 ion-title {
