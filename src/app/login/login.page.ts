@@ -16,8 +16,8 @@ import { Alumno } from '../models/alumno';
 export class LoginPage implements OnInit {
 
   ListUsuario: Alumno[] = [
-    new Alumno('12345678-k', 'Pedro', 'Perez', '20/03/1997', 'Ing informatica', 'pe.perez@duocuc.cl', 'Vespertino', 'base de dato', '123'),
-    new Alumno('87654321-k', 'Matias', 'Varga', '25/12/1990', 'Redes y comunicacion', 'ma.vargas@duocuc.cl', 'Diurno', 'Matematica aplicada', '123'),
+    new Alumno('12345678-k', 'Pedro', 'Perez', '20/03/1997', 'Ingeniería en Informática', 'pe.perez@duocuc.cl', 'Vespertino', 'Modelamiento de base de datos', '123'),
+    new Alumno('87654321-k', 'Matias', 'Varga', '25/12/1990', 'Ingeniería Civil Electrónica', 'ma.vargas@duocuc.cl', 'Diurno', 'Matematica aplicada', '123'),
   ];
 
   user = {
@@ -43,12 +43,9 @@ export class LoginPage implements OnInit {
       } else {
         this.presentToast("Usuario o contraseña incorrecta")
       }
-
-
     }
-    // Mensaje de error si no se encuentra el usuario
-    console.error('Usuario o contraseña incorrectos');
   }
+  
   async presentToast(message: string, duration: number = 5000) {//creacion de una funcion asincronica
     let toast = this.toastController.create({ //creamos una variable toast que se inicializa llamando al metodo create 
       message: message,
