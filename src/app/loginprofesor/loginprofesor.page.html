@@ -1,20 +1,22 @@
-<ion-header [translucent]="true">
+<ion-header >
   <ion-toolbar>
-    <ion-title>BIENVENIDOS DOCENTES</ion-title>
+    <ion-title>BIENVENIDOS DOCENTE</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-list>
-    <ion-item>
-      <ion-input class="animated-title" label="Correo " type="email" placeholder="correo@duocuc.cl"></ion-input>
-    </ion-item>
+    <ion-list>
+      <ion-item>
+        <ion-input class="animated-title" [(ngModel)]="user.usuario" label="Correo " type="email" placeholder="correo@duocuc.cl"></ion-input>
+      </ion-item>
 
+      <ion-item>
+        <ion-input class="animated-title" [(ngModel)]="user.password" label="Contraseña " type="password" placeholder="Ingrese clave"></ion-input>
+      </ion-item>
+    </ion-list>
+    <a style="margin: 10px;" href="/recuperarcontrasena">¿olvide mi contraseña?</a>
     <ion-item>
-      <ion-input class="animated-title" label="Contraseña " type="password" value="contraseña"></ion-input>
+      <ion-button class="animated-title" (click)=" ingresar()">INGRESAR</ion-button>
+      <ion-button class="animated-title" href="/home">Volver</ion-button>
     </ion-item>
-
-    <ion-button class="animated-title">ENTRAR</ion-button>
-    <ion-button class="animated-title" href="/home">SALIR</ion-button>
-  </ion-list>
 </ion-content>

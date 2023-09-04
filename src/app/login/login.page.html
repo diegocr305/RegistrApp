@@ -11,13 +11,12 @@
       </ion-item>
 
       <ion-item>
-        <ion-input class="animated-title" [(ngModel)]="user.password" label="Contraseña " type="password"></ion-input>
+        <ion-input class="animated-title" [(ngModel)]="user.password" label="Contraseña " type="password" placeholder="Ingrese clave"></ion-input>
       </ion-item>
     </ion-list>
+    <a style="margin: 10px;" href="/recuperarcontrasena">¿olvide mi contraseña?</a>
     <ion-item>
-      <ion-button class="animated-title" (click)=" ingresar()">ENTRAR</ion-button>
-    </ion-item>
-    <ion-item>
-      <ion-button class="animated-title" href="/home">SALIR</ion-button>
+      <ion-button class="animated-title" (click)=" ingresar()">INGRESAR</ion-button>
+      <ion-button class="animated-title" href="/home">Volver</ion-button>
     </ion-item>
 </ion-content>

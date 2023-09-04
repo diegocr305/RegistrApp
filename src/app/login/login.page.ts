@@ -39,7 +39,7 @@ export class LoginPage implements OnInit {
             user: this.ListUsuario[i]
           }
         }
-        this.router.navigate(['/home'], navigationExtras);
+        this.router.navigate(['/perfil-alumno'], navigationExtras);
       } else {
         this.presentToast("Usuario o contraseña incorrecta")
       }
@@ -49,11 +49,28 @@ export class LoginPage implements OnInit {
     // Mensaje de error si no se encuentra el usuario
     console.error('Usuario o contraseña incorrectos');
   }
-  async presentToast(menssage: string, duration: number = 5000) {//creacion de una funcion asincronica
+  async presentToast(message: string, duration: number = 5000) {//creacion de una funcion asincronica
     let toast = this.toastController.create({ //creamos una variable toast que se inicializa llamando al metodo create 
-      message: menssage,
+      message: message,
       duration: duration
     });
     (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
   }
+
+
+//   actualizarContrasena(usuario: string, newPassword: string){
+//     for(let i = 0; i < this.ListUsuario.length; i++){
+//       console.log(usuario);  
+//       console.log(newPassword); 
+       
+//       if(this.ListUsuario[i].correoElectronico === usuario){
+//         console.log(this.ListUsuario[i]);   
+//         this.ListUsuario[i].contrasena = newPassword;   
+//         console.log(this.ListUsuario[i]);  
+        
+//         break;
+//       }
+         
+//     }
+//   }
 }
