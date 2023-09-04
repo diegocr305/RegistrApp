@@ -1,9 +1,16 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>Perfil Profesor</ion-title>
+    <ion-title>BIENVENIDO {{ userInfo?.nombre }} </ion-title>
   </ion-toolbar>
 </ion-header>
 
+
+
+
 <ion-content [fullscreen]="true">
   
+  <h1> {{ userInfo?.rut }}</h1>
+<h3> {{ userInfo?.horario }}</h3>
+<h4> {{ userInfo?.asignatura}}</h4>
+
 </ion-content>
