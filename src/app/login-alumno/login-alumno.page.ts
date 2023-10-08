@@ -6,14 +6,13 @@ import { NavigationExtras, Router } from '@angular/router';
 import { Alumno } from '../models/alumno';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-login-alumno',
+  templateUrl: './login-alumno.page.html',
+  styleUrls: ['./login-alumno.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule]
 })
-
-export class LoginPage implements OnInit {
+export class LoginAlumnoPage implements OnInit {
 
   ListUsuario: Alumno[] = [
     new Alumno('12345678-k', 'Pedro', 'Perez', '20/03/1997', 'Ingeniería en Informática', 'pe.perez@duocuc.cl', 'Vespertino', 'Modelamiento de base de datos', '123'),
@@ -54,6 +53,11 @@ export class LoginPage implements OnInit {
     (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
   }
 
+  home(){
+    this.router.navigate(['/home']);
+  }
+
+
 
 //   actualizarContrasena(usuario: string, newPassword: string){
 //     for(let i = 0; i < this.ListUsuario.length; i++){
@@ -70,4 +74,5 @@ export class LoginPage implements OnInit {
          
 //     }
 //   }
+
 }

@@ -11,9 +11,6 @@ export const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'login',
-    loadComponent: () => import('./login/login.page').then( m => m.LoginPage)
-  },  {
     path: 'recuperarcontrasena',
     loadComponent: () => import('./recuperarcontrasena/recuperarcontrasena.page').then( m => m.RecuperarcontrasenaPage)
   },
@@ -28,6 +25,10 @@ export const routes: Routes = [
   {
     path: 'perfil-alumno',
     loadComponent: () => import('./perfil-alumno/perfil-alumno.page').then( m => m.PerfilAlumnoPage)
+  },
+  {
+    path: 'login-alumno',
+    loadComponent: () => import('./login-alumno/login-alumno.page').then( m => m.LoginAlumnoPage)
   },
 
 ];

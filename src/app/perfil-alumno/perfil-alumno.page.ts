@@ -21,4 +21,10 @@ export class PerfilAlumnoPage implements OnInit {
     console.log(this.userInfo)
   }
 
+
+  Volver(){
+    
+
+  }
+
 }

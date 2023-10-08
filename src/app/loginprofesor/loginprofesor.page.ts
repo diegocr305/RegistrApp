@@ -55,4 +55,9 @@ export class LoginprofesorPage implements OnInit {
     });
     (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
   }
+
+  home(){
+    this.router.navigate(['/home']);
+
+  }
 }

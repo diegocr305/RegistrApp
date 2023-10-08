@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavigationExtras, Router } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 @Component({
@@ -9,5 +10,14 @@ import { IonicModule } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class HomePage {
-  constructor() {}
+  constructor(private router : Router) {}
+
+  lP(){
+    this.router.navigate(['/loginprofesor']);
+  }
+
+  lA(){
+    this.router.navigate(['/login-alumno']);
+  }
+
 }

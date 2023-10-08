@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { LoginPage } from '../login/login.page';
 import { Router } from '@angular/router';
+import { LoginAlumnoPage } from '../login-alumno/login-alumno.page';
 
 @Component({
   selector: 'app-recuperarcontrasena',
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./recuperarcontrasena.page.scss'],
   standalone: true,
   imports: [IonicModule, CommonModule, FormsModule],
-  providers: [LoginPage],
+  providers: [LoginAlumnoPage],
 })
 export class RecuperarcontrasenaPage implements OnInit {
 
@@ -20,17 +20,17 @@ export class RecuperarcontrasenaPage implements OnInit {
     newPassword: ""
   }
 
-  constructor(private loginPage: LoginPage, private router: Router) { }
+  constructor(private loginAlumno: LoginAlumnoPage, private router: Router) { }
 
   ngOnInit() {
   }
 
 
   recuperarContrasena(){
-    // this.loginPage.actualizarContrasena(this.user.usuario, this.user.newPassword);
+    // this.loginAlumno.actualizarContrasena(this.user.usuario, this.user.newPassword);
     // console.log(`Contraseña cambiada exitosamente para ${this.user.usuario}`);
-    this.loginPage.presentToast("Contraseña cambiada exitosamente");
-    this.router.navigate(['/login']); 
+    this.loginAlumno.presentToast("Contraseña cambiada exitosamente");
+    this.router.navigate(['/login-alumno']); 
 
   }
 
