@@ -1,13 +1,13 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title style="font-size:40px;">
-     BIENVENIDO
-     
-    </ion-title>
-  </ion-toolbar>
 </ion-header>
-
 <ion-content style="background-color: #919993;" [fullscreen]="true">
-  <ion-button class="animated-title"  (click)="lP()">DOCENTE</ion-button> 
-  <ion-button class="animated-title" (click)="lA()">ESTUDIANTE</ion-button>
+  <ion-card-content>
+    <div class="img_cent ion-text-center ion-align-items-center">
+    <img src="assets/img/open-book.png" alt="">
+    </div>
+    <div class="social_btn">
+      <ion-button fill="clear" class="animated-title btn"  (click)="lP()">DOCENTE</ion-button> 
+      <ion-button fill="clear" class="animated-title btn" (click)="lA()">ESTUDIANTE</ion-button>
+    </div>
+  </ion-card-content>
 </ion-content>

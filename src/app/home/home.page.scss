@@ -42,11 +42,28 @@
 }
 
 ion-content {
-  --background: #dee0df; /* Cambia el color de fondo aquí */
+  --background: #ffffff; /* Cambia el color de fondo aquí */
 }
 
 ion-title {
   font-size: 40px; /* Cambia el tamaño de fuente aquí */
+}
+
+
+//
+
+.social_btn{
+  margin-top:25px;
+  margin-bottom:25px;
+  text-align: center;
+}
+
+
+.btn{
+  background-color: #696969 !important; /* Cambia el color de fondo a rojo */
+  color: #fffcfc; /* Cambia el color del texto a blanco */
+  border-radius: 10px; /* Agrega esquinas redondeadas */
+  //background: transparent !important;
 }
 
 
