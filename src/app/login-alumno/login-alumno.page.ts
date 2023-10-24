@@ -4,6 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule, ToastController } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
 import { Alumno } from '../models/alumno';
+import { UsersService } from '../services/userservice/users.service';
+
+
 
 @Component({
   selector: 'app-login-alumno',
@@ -24,12 +27,20 @@ export class LoginAlumnoPage implements OnInit {
     password: ""
   }
 
-  constructor(private router: Router, public toastController: ToastController) { }
+  constructor(private router: Router, public toastController: ToastController, private userservice: UsersService) { }
 
   ngOnInit() {
   }
 
   ingresar() {
+    console.log(this.user)
+    this.userservice.getLogin(this.user).subscribe(
+      (data) => {
+        console.log(data)
+      }
+    );
+
+
     for (let i = 0; i < this.ListUsuario.length; i++) {
       if (this.ListUsuario[i].correoElectronico === this.user.usuario && this.ListUsuario[i].contrasena == this.user.password) {
         console.log(this.ListUsuario[i]);
@@ -44,7 +55,7 @@ export class LoginAlumnoPage implements OnInit {
       }
     }
   }
-  
+
   async presentToast(message: string, duration: number = 5000) {//creacion de una funcion asincronica
     let toast = this.toastController.create({ //creamos una variable toast que se inicializa llamando al metodo create 
       message: message,
@@ -53,26 +64,26 @@ export class LoginAlumnoPage implements OnInit {
     (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
   }
 
-  home(){
+  home() {
     this.router.navigate(['/home']);
   }
 
 
 
-//   actualizarContrasena(usuario: string, newPassword: string){
-//     for(let i = 0; i < this.ListUsuario.length; i++){
-//       console.log(usuario);  
-//       console.log(newPassword); 
-       
-//       if(this.ListUsuario[i].correoElectronico === usuario){
-//         console.log(this.ListUsuario[i]);   
-//         this.ListUsuario[i].contrasena = newPassword;   
-//         console.log(this.ListUsuario[i]);  
-        
-//         break;
-//       }
-         
-//     }
-//   }
+  //   actualizarContrasena(usuario: string, newPassword: string){
+  //     for(let i = 0; i < this.ListUsuario.length; i++){
+  //       console.log(usuario);  
+  //       console.log(newPassword); 
+
+  //       if(this.ListUsuario[i].correoElectronico === usuario){
+  //         console.log(this.ListUsuario[i]);   
+  //         this.ListUsuario[i].contrasena = newPassword;   
+  //         console.log(this.ListUsuario[i]);  
+
+  //         break;
+  //       }
+
+  //     }
+  //   }
 
 }
