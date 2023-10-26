@@ -29,6 +29,10 @@ export const routes: Routes = [
   {
     path: 'login-alumno',
     loadComponent: () => import('./login-alumno/login-alumno.page').then( m => m.LoginAlumnoPage)
+  },  {
+    path: 'vista-profe',
+    loadComponent: () => import('./vista-profe/vista-profe.page').then( m => m.VistaProfePage)
   },
+
 
 ];
