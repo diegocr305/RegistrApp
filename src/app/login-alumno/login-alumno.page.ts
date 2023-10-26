@@ -6,7 +6,7 @@ import { NavigationExtras, Router } from '@angular/router';
 import { Alumno } from '../models/alumno';
 import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
-import { UserLogin } from '../models/Userlogin';
+import { userLogin } from '../models/userLogin';
 
 
 
@@ -58,7 +58,7 @@ export class LoginAlumnoPage implements OnInit {
     // }
   }
 
-  async Login(userLoginInfo: UserLogin) {
+  async Login(userLoginInfo: userLogin) {
     const user_alumno = await lastValueFrom(this.userservice.getLogin(userLoginInfo));
     console.log(user_alumno);
     if (user_alumno) {
