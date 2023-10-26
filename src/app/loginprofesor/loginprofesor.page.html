@@ -8,25 +8,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card-content>
-    <h1 style="display: flex;
-    align-items: center;
-    justify-content: center;">Login</h1>
-      <div>
-        <p>Usuario</p>
-        <ion-item class="border">
-          <ion-input class="animated-title" [(ngModel)]="user.usuario"  placeholder="usuario@duocuc.cl" type="email"></ion-input>
-        </ion-item>
-        <p>Contraseña</p>
-        <ion-item class="border">
-          <ion-input class="animated-title" [(ngModel)]="user.password" type="password"></ion-input>
-        </ion-item>
-      </div>
-      <div>
-        <a style="text-align: center;margin: 0;padding: 100"  (click)="recupContrasena()">¿Olvido su Contraseña?</a>
-      </div>
-      <div class="signin-btns"> 
-        <ion-button fill="solid" shape="round" class="animated-title loginbtn" (click)="Login(user)">INGRESAR</ion-button>
-      </div>
-    </ion-card-content>
+    <ion-list>
+      <ion-item>
+        <ion-input class="animated-title" [(ngModel)]="user.usuario" label="Correo " type="email" placeholder="correo@duocuc.cl"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input class="animated-title" [(ngModel)]="user.password" label="Contraseña " type="password" placeholder="Ingrese clave"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-item>
+      <a style="margin: 10px;" href="/recuperarcontrasena">¿olvide mi contraseña?</a>
+    </ion-item>
+      <ion-button class="animated-title" (click)=" ingresar()">INGRESAR</ion-button>
+      <ion-button class="animated-title" (click)="home()">Volver</ion-button>
+
 </ion-content>
