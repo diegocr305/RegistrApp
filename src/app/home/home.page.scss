@@ -60,11 +60,19 @@ ion-title {
 
 
 .btn{
-  background-color: #696969 !important; /* Cambia el color de fondo a rojo */
+  background-color: #1f1d6e !important; /* Cambia el color de fondo a rojo */
   color: #fffcfc; /* Cambia el color del texto a blanco */
   border-radius: 10px; /* Agrega esquinas redondeadas */
   //background: transparent !important;
+  
+}
+
+.container {
+  height: 300px; /* Altura de tu contenedor */
+  overflow: hidden; /* Oculta el contenido que se desborde del contenedor */
 }
 
 
-
+#imagenAnimada {
+  transition: transform 0.5s ease-in-out;
+}
