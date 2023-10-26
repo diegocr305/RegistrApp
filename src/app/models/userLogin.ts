@@ -1,7 +1,7 @@
-export class userLogin {
-    constructor(     
-        public usuario: string,
-        public password: string
-
+export class UserLogin {
+    constructor(
+        
+        public correo: string,
+        public contrasena: string
     ) {}
 }

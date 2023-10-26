@@ -1,16 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map } from 'rxjs';
-
 import { userLogin } from 'src/app/models/userLogin';
-
 import { Alumno } from 'src/app/models/alumno';
-
-
 @Injectable({
   providedIn: 'root'
 })
-export class UsersService {
+export class ProfesorserviceService {
+
+
   URL_SUPEBASE = 'https://ndroieqpblapcuoesdhr.supabase.co/rest/v1/'
   constructor(private _httpcliente: HttpClient) { }
 
@@ -19,7 +17,7 @@ export class UsersService {
 
 
   getLogin(UserLogin: userLogin): Observable<string | any> {
-    return this._httpcliente.get<any>(this.URL_SUPEBASE + "Alumno?correo=eq." + UserLogin.usuario + "&password=eq." + UserLogin.password, { headers: this.supebaseheards }).pipe(
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + "Profesor?correo=eq." + UserLogin.usuario + "&password=eq." + UserLogin.password, { headers: this.supebaseheards }).pipe(
       map((user) => {
         console.log("Map", user[0])
         return user[0]
@@ -28,18 +26,5 @@ export class UsersService {
         return err;
       })
     )
-  }
-
-  //prueba
-
-  AgregarAlumno(newUser: Alumno): Observable<any> {
-    // Define los datos del nuevo usuario que deseas agregar
-    console.log(newUser)
-    return this._httpcliente.post<any>(this.URL_SUPEBASE + 'Alumno',newUser, { headers: this.supebaseheards }).pipe(
-      catchError((error) => {
-        console.error('Error al crear un nuevo usuario', error);
-        return error;
-      })
-    );
   }
 }
