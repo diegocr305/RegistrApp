@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { VistaProfePage } from './vista-profe.page';
+import { AdminPage } from './admin.page';
 
-describe('VistaProfePage', () => {
-  let component: VistaProfePage;
-  let fixture: ComponentFixture<VistaProfePage>;
+describe('AdminPage', () => {
+  let component: AdminPage;
+  let fixture: ComponentFixture<AdminPage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(VistaProfePage);
+    fixture = TestBed.createComponent(AdminPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));
