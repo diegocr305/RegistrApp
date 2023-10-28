@@ -14,22 +14,22 @@ import { Profesor } from '../models/profesor';
 })
 export class VistaProfePage implements OnInit {
 
-  userInfo?: Profesor;
+  profesor?: Profesor;
 
   constructor(private router: Router, private activateRoute: ActivatedRoute) {
     const state = this.router.getCurrentNavigation()?.extras.state;
-    if (state && state['userInfo']) {
-      this.userInfo = state['userInfo'];
+    if (state && state['profesor']) {
+      this.profesor = state['profesor'];
     }
   }
 
   ngOnInit() {
-    console.log(this.userInfo)
+    console.log(this.profesor)
   }
 
 
   perfilProfe(){
-    this.router.navigate(['/perfil-profesor'], { state: { userInfo:this.userInfo}})
+    this.router.navigate(['/perfil-profesor'], { state: { profesor:this.profesor}})
   }
 
 
