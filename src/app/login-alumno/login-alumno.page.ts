@@ -63,7 +63,7 @@ export class LoginAlumnoPage implements OnInit {
     console.log(user_alumno);
     if (user_alumno) {
       console.log("Usuario existe...");
-      this.router.navigate(['/vista-alumno'], { state: { userInfo: user_alumno}})
+      this.router.navigate(['/perfil-alumno'], { state: { userInfo: user_alumno}})
     } else {
       //NO EXISTE
       console.log("Usuario no existe...");
