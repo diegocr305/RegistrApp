@@ -39,4 +39,16 @@ export class UsersService {
       })
     );
   }
+
+  getProfe(UserLogin: userLogin): Observable<string | any> {
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + "Profesor?correo=eq." + UserLogin.usuario + "&password=eq." + UserLogin.password, { headers: this.supebaseheards }).pipe(
+      map((user) => {
+        console.log("Map", user[0])
+        return user[0]
+      }), catchError((err) => {
+        console.log(err)
+        return err;
+      })
+    )
+  }
 }
