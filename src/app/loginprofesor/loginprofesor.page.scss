@@ -1,13 +1,51 @@
 @keyframes slideInLeft {
-    from {
-      transform: translateX(-100%);
-    }
-    to {
-      transform: translateX(0);
-    }
+  from {
+    transform: translateX(-100%);
   }
-  
-  .animated-title {
-    animation: slideInLeft 1s ease-in-out; /* Nombre de la animación, duración y temporización */
+  to {
+    transform: translateX(0);
   }
+}
+
+.animated-title {
+  animation: slideInLeft 1s ease-in-out; /* Nombre de la animación, duración y temporización */
+}
+
+//btn
+.signin-btns{
+margin-top: 25px;
+text-align: center;
+color:rgb(255, 255, 255);
+}
+//bordes de los btn
+.border{
+border: 2px solid #000000; /* Establece un borde sólido de 2 píxeles con un color azul (#007bff) */
+border-radius: 15px;
+}
+//color del btn
+
+.loginbtn{
+--ion-color-primary: #454546;
+}
+
+
+
+ion-item{
+ion-input{
+    color:#616161;
+}
+}
+
+ion-toolbar{
+--ion-background-color: transparent;
+--opacity:0;
+}
+
+
+
+
+// body {
+//   background: url('src/assets/img/imagenfondo.png') no-repeat center center fixed;
+//   background-size: cover;
+// }
 

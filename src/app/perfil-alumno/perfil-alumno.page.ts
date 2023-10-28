@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { userLogin } from '../models/userLogin';
 import { Alumno } from '../models/alumno';
+import { UsersService } from '../services/userservice/users.service';
+
 
 @Component({
   selector: 'app-perfil-alumno',
@@ -14,6 +15,7 @@ import { Alumno } from '../models/alumno';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class PerfilAlumnoPage implements OnInit {
+  
   userInfo?: Alumno;
 
   constructor(private router: Router, private activateRoute: ActivatedRoute) {
@@ -23,14 +25,13 @@ export class PerfilAlumnoPage implements OnInit {
     }
   }
 
-  ngOnInit() {
-    console.log(this.userInfo)
-  }
-
-
-  Volver(){
+    ngOnInit() {
+      console.log(this.userInfo);
+      
+    }
     
 
-  }
+  Volver(){
 
+  }
 }

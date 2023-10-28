@@ -13,9 +13,12 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class PerfilProfesorPage implements OnInit {
     userInfo: any | undefined;
-    constructor( private router: Router, private activateRoute: ActivatedRoute) {
-      this.userInfo = this.router.getCurrentNavigation ()?.extras.state?.['user'];
-     }
+    profesor: any;
+    constructor(private router: Router) {
+      // Recupera los datos pasados desde la página de login
+      const navigation = this.router.getCurrentNavigation();
+      this.profesor = navigation?.extras.state?.['profesor'];
+    }
   
     ngOnInit() {
       console.log(this.userInfo)

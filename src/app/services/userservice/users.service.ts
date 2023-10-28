@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map } from 'rxjs';
-import { Alumno } from 'src/app/models/alumno';
+
 import { userLogin } from 'src/app/models/userLogin';
+
+import { Alumno } from 'src/app/models/alumno';
+
 
 @Injectable({
   providedIn: 'root'
@@ -41,12 +44,17 @@ export class UsersService {
   }
 
 
-  getUserType(user_id: string){
-    return this._httpcliente.get<any>(this.URL_SUPEBASE+"Alumno?rut=eq."+user_id,{ headers: this.supebaseheards}).pipe(
-        map((userInfo) => {
-            console.log(userInfo);
-            return userInfo;
-        })
-    )
-}
+  getPerfilAlumno(rut: string): Observable<Alumno | any> {
+    return this._httpcliente.get<Alumno[]>(this.URL_SUPEBASE + "Alumno?Rut=eq." + rut, { headers: this.supebaseheards }).pipe(
+      map((alumnos) => {
+        console.log("Obtenido:", alumnos[0]);
+        return alumnos[0];
+      }),
+      catchError((err) => {
+        console.error('Error al obtener el perfil del alumno', err);
+        return err;
+      })
+    );
+  }
+
 }

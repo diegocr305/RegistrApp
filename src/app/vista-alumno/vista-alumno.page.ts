@@ -3,12 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, PopoverController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Profesor } from '../models/profesor';
 import { Alumno } from '../models/alumno';
-import { Observable } from 'rxjs';
-import { UsersService } from '../services/userservice/users.service';
-import { userLogin } from '../models/userLogin';
-
 @Component({
   selector: 'app-vista-alumno',
   templateUrl: './vista-alumno.page.html',

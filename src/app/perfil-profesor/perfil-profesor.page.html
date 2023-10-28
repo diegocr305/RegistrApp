@@ -1,27 +1,34 @@
-<ion-header [translucent]="true">
+<!-- perfil-profesor.page.html -->
+<ion-header class="ion-no-border">
   <ion-toolbar>
-    <ion-title>BIENVENIDO {{ userInfo?.nombre }} {{ userInfo?.apellido }} </ion-title>
+    <ion-title>Perfil del Profesor</ion-title>
   </ion-toolbar>
 </ion-header>
 
-
-
-
 <ion-content [fullscreen]="true">
-  <ion-item>
-    <h2>Rut: {{ userInfo?.rut }}</h2>
-  </ion-item>
-  <ion-item>
-    <h2>Horario: {{ userInfo?.horario }}</h2>
-  </ion-item>
-  <ion-item>
-    <h2>Asignatura: {{ userInfo?.asignatura}}</h2>
-  </ion-item>
-  <ion-button style=" margin: 20px; display: flex;" href="/home">Volver</ion-button>
+  <div class="ion-text-center">
+    <h2>{{ profesor.nombre }}</h2>
+  </div>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>RUT:</ion-label>
+      <ion-text>{{ profesor.Rut }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Edad:</ion-label>
+      <ion-text>{{ profesor.edad }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Teléfono:</ion-label>
+      <ion-text>{{ profesor.telefono }}</ion-text>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Correo:</ion-label>
+      <ion-text>{{ profesor.correo }}</ion-text>
+    </ion-item>
+  </ion-list>
 </ion-content>
-<br> <br><br>
-<div class="img_cent ion-text-center ion-align-items-center">
-  <img src="assets/img/LOGO.png" width="200" height="100" alt="">
-
-
-</div>

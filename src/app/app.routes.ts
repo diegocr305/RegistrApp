@@ -37,10 +37,12 @@ export const routes: Routes = [
   {
     path: 'vista-alumno',
     loadComponent: () => import('./vista-alumno/vista-alumno.page').then( m => m.VistaAlumnoPage)
-  },  {
+  },
+  {
     path: 'vista-profe',
     loadComponent: () => import('./vista-profe/vista-profe.page').then( m => m.VistaProfePage)
   },
+
 
 
 
