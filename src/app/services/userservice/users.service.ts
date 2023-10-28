@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map } from 'rxjs';
-
 import { userLogin } from 'src/app/models/userLogin';
-
 import { Alumno } from 'src/app/models/alumno';
 
 
@@ -39,20 +37,6 @@ export class UsersService {
       catchError((error) => {
         console.error('Error al crear un nuevo usuario', error);
         return error;
-      })
-    );
-  }
-
-
-  getPerfilAlumno(rut: string): Observable<Alumno | any> {
-    return this._httpcliente.get<Alumno[]>(this.URL_SUPEBASE + "Alumno?Rut=eq." + rut, { headers: this.supebaseheards }).pipe(
-      map((alumnos) => {
-        console.log("Obtenido:", alumnos[0]);
-        return alumnos[0];
-      }),
-      catchError((err) => {
-        console.error('Error al obtener el perfil del alumno', err);
-        return err;
       })
     );
   }

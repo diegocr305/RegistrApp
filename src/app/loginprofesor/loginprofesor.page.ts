@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ToastController } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
-import { Alumno } from '../models/alumno';
-import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
 import { userLogin } from '../models/userLogin';
 import { ProfesorserviceService } from '../services/userservice/profesorservice.service';
@@ -19,50 +17,30 @@ import { ProfesorserviceService } from '../services/userservice/profesorservice.
 })
 export class LoginprofesorPage implements OnInit {
 
+
+  // ListProfesores: Profesor[] = [
+  //   new Profesor('12345678-k', 'Juan', 'Perez', 'ju.perez@duocuc.cl', 'Matemáticas', 'Vespertino', '123'),
+  //   new Profesor('87654321-k', 'Maria', 'Gonzalez', 'ma.gonzalez@duocuc.cl', 'Física','Diurno' , '123'),
+  // ];
+
   user = {
     usuario: "",
     password: ""
   }
 
+
   constructor(private router: Router, public toastController: ToastController, private profesorservice: ProfesorserviceService) { }
+
 
   ngOnInit() {
   }
 
-  ingresar() {
-    this.profesorservice.getLogin(this.user).subscribe(
-      (data) => {
-        if (data) {
-          // Si se obtuvieron datos del profesor, navega a la página de perfil
-          this.router.navigate(['/perfil-profesor'], { state: { profesor: data }});
-        } else {
-          this.presentToast("Usuario o contraseña incorrecta");
-        }
-      }
-    );
-
-
-    // for (let i = 0; i < this.ListUsuario.length; i++) {
-    //   if (this.ListUsuario[i].correoElectronico === this.user.usuario && this.ListUsuario[i].contrasena == this.user.password) {
-    //     console.log(this.ListUsuario[i]);
-    //     let navigationExtras: NavigationExtras = {
-    //       state: {
-    //         user: this.ListUsuario[i]
-    //       }
-    //     }
-    //     this.router.navigate(['/perfil-alumno'], navigationExtras);
-    //   } else {
-    //     this.presentToast("Usuario o contraseña incorrecta")
-    //   }
-    // }
-  }
-
   async Login(userLoginInfo: userLogin) {
-    const user_alumno = await lastValueFrom(this.profesorservice.getLogin(userLoginInfo));
-    console.log(user_alumno);
-    if (user_alumno) {
+    const user_profesor = await lastValueFrom(this.profesorservice.getLoginProfe(userLoginInfo));
+    console.log(user_profesor);
+    if (user_profesor) {
       console.log("Usuario existe...");
-      this.router.navigate(['/home'], { state: { userInfo: user_alumno}})
+      this.router.navigate(['/home'], { state: { userInfo: user_profesor } })
     } else {
       //NO EXISTE
       console.log("Usuario no existe...");
@@ -70,8 +48,7 @@ export class LoginprofesorPage implements OnInit {
     }
   }
 
-  async presentToast(message: string
-    ) {//creacion de una funcion asincronica
+  async presentToast(message: string) {//creacion de una funcion asincronica
     let toast = this.toastController.create({ //creamos una variable toast que se inicializa llamando al metodo create 
       header: 'Datos incorrectos',
       message: message,
@@ -91,11 +68,6 @@ export class LoginprofesorPage implements OnInit {
     (await toast).onDidDismiss();
   }
 
-  home() {
-    this.router.navigate(['/home']);
-  }
-
-
 
   //   actualizarContrasena(usuario: string, newPassword: string){
   //     for(let i = 0; i < this.ListUsuario.length; i++){
@@ -114,9 +86,12 @@ export class LoginprofesorPage implements OnInit {
   //   }
 
   //Funciones para redirigir 
-  recupContrasena(){
+  recupContrasena() {
     this.router.navigate(['/recuperarcontrasena']);
+  }
 
+  home() {
+    this.router.navigate(['/home']);
   }
 
 }
