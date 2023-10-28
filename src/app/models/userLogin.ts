@@ -1,4 +1,4 @@
-export class UserLogin {
+export class userLogin {
     constructor(
         
         public usuario: string,
