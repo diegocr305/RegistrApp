@@ -1,11 +1,10 @@
 export class Profesor {
     constructor(
-        public rut: string,
-        public nombre: string,
-        public apellido: string,
-        public correoElectronico: string,
-        public asignatura: string,
-        public horario: string,
-        public contrasena: string
+        public Rut: string,
+        public Nombre: string,
+        public edad:number | undefined,
+        public correo: string,
+        public password: string,
+        public telefono: number,
     ) {}
 }
