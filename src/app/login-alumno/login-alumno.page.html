@@ -9,7 +9,7 @@
 
 <ion-content [fullscreen]="true">
   <ion-card-content>
-    <h1 style="display: flex;
+    <h1 style="color: black;display: flex;
     align-items: center;
     justify-content: center;">Login</h1>
       <div>
@@ -26,18 +26,10 @@
         <a style="text-align: center;margin: 0;padding: 100"  (click)="recupContrasena()">¿Olvido su Contraseña?</a>
       </div>
       <div class="signin-btns"> 
-        <ion-button fill="solid" shape="round" class="animated-title loginbtn" (click)="Login(user)">INGRESAR</ion-button>
-
-        <br> <br><br>
-        <div class="img_cent ion-text-center ion-align-items-center">
-        <img src="assets/img/LOGO.png"   width="200" height="100" alt="">
-
-
-        </div>
-
-
-
-      
+        <ion-button fill="solid" shape="round" class="animated-title loginbtn" (click)="Login(user)">INGRESAR</ion-button>  
       </div>
+      <div class="img_cent ion-text-center ion-align-items-center" style="margin-top: 70px;">
+        <img src="assets/img/LOGO.png"   width="200" height="100" alt="">
+      </div>  
     </ion-card-content>
 </ion-content>
