@@ -16,16 +16,22 @@
   margin-top: 25px;
   text-align: center;
   color:rgb(255, 255, 255);
+  
 }
 //bordes de los btn
 .border{
-  border: 2px solid #000000; /* Establece un borde sólido de 2 píxeles con un color azul (#007bff) */
+  border: 2px solid #1f1d6e; /* Establece un borde sólido de 2 píxeles con un color azul (#007bff) */
   border-radius: 15px;
+  --background: #ffffff;
+  
 }
 //color del btn
 
 .loginbtn{
-  --ion-color-primary: #454546;
+  --ion-color-primary: #1f1d6e;
+}
+p{
+  color: black;
 }
 
 
@@ -40,9 +46,11 @@ ion-toolbar{
   --ion-background-color: transparent;
   --opacity:0;
 }
+
+ion-content {
+  --background: #ffffff; /* Cambia el color de fondo aquí */
+}
   
-
-
 
 // body {
 //   background: url('src/assets/img/imagenfondo.png') no-repeat center center fixed;
