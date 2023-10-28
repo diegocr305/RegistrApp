@@ -2,7 +2,7 @@ export class Alumno {
     constructor(
         public Rut: string,
         public Nombre: string,
-        public edad:number,
+        public edad:number | undefined,
         public correo: string,
         public password: string,
         public telefono: number,

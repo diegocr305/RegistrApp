@@ -41,4 +41,16 @@ export class UsersService {
     );
   }
 
+  getCarrera(id: any){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Carrera?id_carrera=eq.'+ id, { headers: this.supebaseheards }).pipe(
+    map((user) => {
+        console.log("Map", user[0])
+        return user[0]
+      }), catchError((err) => {
+        console.log(err)
+        return err;
+      })
+    );
+  }
+
 }

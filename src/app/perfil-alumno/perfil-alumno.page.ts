@@ -5,6 +5,8 @@ import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Alumno } from '../models/alumno';
 import { UsersService } from '../services/userservice/users.service';
+import { catchError, lastValueFrom } from 'rxjs';
+import { carrera } from '../models/carrera';
 
 
 @Component({
@@ -17,21 +19,21 @@ import { UsersService } from '../services/userservice/users.service';
 export class PerfilAlumnoPage implements OnInit {
   
   userInfo?: Alumno;
+  userCarrera?: carrera;
 
-  constructor(private router: Router, private activateRoute: ActivatedRoute) {
+  constructor(private router: Router, private activateRoute: ActivatedRoute,private userService:UsersService) {
     const state = this.router.getCurrentNavigation()?.extras.state;
     if (state && state['userInfo']) {
       this.userInfo = state['userInfo'];
     }
   }
 
-    ngOnInit() {
-      console.log(this.userInfo);
-      
-    }
-    
-
-  Volver(){
-
+  async ngOnInit() {
+    console.log(this.userInfo);
+    const user_carrera = await lastValueFrom(this.userService.getCarrera(this.userInfo?.id_carrera));
+    console.log(user_carrera); 
+    this.userCarrera = user_carrera;
   }
+  
+
 }
