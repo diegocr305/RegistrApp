@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
+import { userLogin } from '../models/userLogin';
+import { Alumno } from '../models/alumno';
 
 @Component({
   selector: 'app-perfil-alumno',
@@ -12,10 +14,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class PerfilAlumnoPage implements OnInit {
-  userInfo: any | undefined;
-  constructor( private router: Router, private activateRoute: ActivatedRoute) {
-    this.userInfo = this.router.getCurrentNavigation ()?.extras.state?.['user'];
-   }
+  userInfo?: Alumno;
+
+  constructor(private router: Router, private activateRoute: ActivatedRoute) {
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if (state && state['userInfo']) {
+      this.userInfo = state['userInfo'];
+    }
+  }
 
   ngOnInit() {
     console.log(this.userInfo)

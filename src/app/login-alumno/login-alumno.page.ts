@@ -8,8 +8,6 @@ import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
 import { userLogin } from '../models/userLogin';
 
-
-
 @Component({
   selector: 'app-login-alumno',
   templateUrl: './login-alumno.page.html',

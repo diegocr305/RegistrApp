@@ -39,4 +39,14 @@ export class UsersService {
       })
     );
   }
+
+
+  getUserType(user_id: string){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE+"Alumno?rut=eq."+user_id,{ headers: this.supebaseheards}).pipe(
+        map((userInfo) => {
+            console.log(userInfo);
+            return userInfo;
+        })
+    )
+}
 }

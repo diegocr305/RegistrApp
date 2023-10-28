@@ -1,5 +1,5 @@
 export class userLogin {
-    constructor(     
+    constructor(
         public usuario: string,
         public password: string
     ) {}

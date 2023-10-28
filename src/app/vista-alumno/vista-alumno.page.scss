@@ -1,3 +1,16 @@
 * {
     --background: #ffffff; /* Cambia el color de fondo aquí */
   }
+
+
+.img{
+    margin-left: 60px;
+    margin-top: 10px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 50%; /* Ajusta este valor para el ancho deseado */
+    overflow: hidden; 
+}
