@@ -30,10 +30,14 @@ export class LoginprofesorPage implements OnInit {
   }
 
   ingresar() {
-    console.log(this.user)
     this.profesorservice.getLogin(this.user).subscribe(
       (data) => {
-        console.log(data.edad)
+        if (data) {
+          // Si se obtuvieron datos del profesor, navega a la página de perfil
+          this.router.navigate(['/perfil-profesor'], { state: { profesor: data }});
+        } else {
+          this.presentToast("Usuario o contraseña incorrecta");
+        }
       }
     );
 
