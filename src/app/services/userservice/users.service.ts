@@ -56,6 +56,18 @@ getPerfilAlumno(rut: string): Observable<Alumno | any> {
     })
   );
 }
+getHorarioAlumno(rut: string): Observable<any> {
+  return this._httpcliente.get<any>(this.URL_SUPEBASE + "Horarios?RutAlumno=eq." + rut, { headers: this.supebaseheards }).pipe(
+    map((horarios) => {
+      return horarios[0];  // Asumiendo que cada alumno tiene un solo horario. Ajustar si no es el caso.
+    }),
+    catchError((err) => {
+      console.error('Error al obtener el horario del alumno', err);
+      return err;
+    })
+  );
+}
+
 
 
 }

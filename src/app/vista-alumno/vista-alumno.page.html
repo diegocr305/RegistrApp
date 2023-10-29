@@ -1,16 +1,19 @@
-
 <ion-header>
   <ion-card-header>
-    <div>
-      <img src="assets/img/LOGO.png" style="display: center;"  width="120" height="60" alt="">
-      <img src="assets/img/user.png" style="margin-bottom: 15px;"> alt="">
+    <div style="text-align: center;">
+      <img src="assets/img/LOGO.png" width="120" height="50" alt="">
+      <img src="assets/img/user.png" style="position: absolute; right: 0; margin-right: 20px; margin-top: 10px;" >
     </div>
   </ion-card-header>
 </ion-header>
 
 <ion-content>
   <ion-card-content>
-
-
+    <div style="margin-top:30px">
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="perfilAlum()">Perfil</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="verHorario()">Horario</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="verAsistencia()">Asistencia</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="verCursos()">Cursos</ion-button>
+    </div>
   </ion-card-content>
 </ion-content>
