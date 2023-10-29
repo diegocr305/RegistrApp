@@ -14,7 +14,7 @@
 
 
 <ion-content>
-  <div *ngFor="let userAsigna of userAsignatura">
+  <div *ngFor="let userAsigna of userAsignatura" (click)="home(userAsigna?.nombre_asignatura)">
     <div class="divAsignatura">
       <h4 style="margin-left: 10px;">{{ userAsigna?.nombre_asignatura }}</h4>
       <p style="margin-left: 10px;">Código: {{ userAsigna?.codigo_asignatura }}</p>

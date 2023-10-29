@@ -40,5 +40,16 @@ export class CursosPage implements OnInit {
     console.log(user_asignatura); 
     this.userAsignatura = user_asignatura;
   }
+
+  home(nombreAsigna: string | undefined) {
+
+    if (nombreAsigna === "ARQUITECTURA") {
+      this.router.navigate(['/home']); // Reemplaza 'ruta-asignatura1' con la ruta real
+    } else if (nombreAsigna === 'Asignatura2') {
+      this.router.navigate(['/vista-alumno']); // Reemplaza 'ruta-asignatura2' con la ruta real
+    } else {
+      // Maneja el caso en el que el nombre de la asignatura no coincide con ninguna ruta conocida
+    }
+  }
   
 }
