@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ToastController } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
 import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
 import { userLogin } from '../models/userLogin';
