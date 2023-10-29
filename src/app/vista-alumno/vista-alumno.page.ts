@@ -27,11 +27,32 @@ export class VistaAlumnoPage implements OnInit {
     console.log(this.userInfo?.Rut);
   }
 
+  isCardExpanded = false;
+
+  toggleCard() {
+    this.isCardExpanded = !this.isCardExpanded;
+  }
+
 
   perfilAlum(){  
     this.router.navigate(['/perfil-alumno'], { state: { userInfo:this.userInfo}})
   }
 
+  asistenAlum(){
+    this.router.navigate(['/asistencia-alumno'], { state: { userInfo:this.userInfo}})
+  }
+
+  horarioAlum(){
+    this.router.navigate(['/horario-alumno'], { state: { userInfo:this.userInfo}})
+  }
+
+  cursosAlum(){
+    this.router.navigate(['/cursos'], { state: { userInfo:this.userInfo}})
+  }
 
 
+  //Redirigir
+  home(){
+    this.router.navigate(['/home'])
+  }
 }
