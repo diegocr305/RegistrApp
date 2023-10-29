@@ -1,0 +1,23 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar>
+    <p style="color: black;display: flex;
+    align-items: center;
+    justify-content: center;" >Mis cursos</p>
+    <ion-buttons slot="start" >
+      <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="nombCarrera">
+    <p class="nombCarrera" >{{userCarrera?.nombre_carrera}}</p>
+  </div>
+</ion-header>
+
+
+<ion-content>
+  <div *ngFor="let userAsigna of userAsignatura" (click)="home(userAsigna?.nombre_asignatura)">
+    <div class="divAsignatura">
+      <h4 style="margin-left: 10px;">{{ userAsigna?.nombre_asignatura }}</h4>
+      <p style="margin-left: 10px;">Código: {{ userAsigna?.codigo_asignatura }}</p>
+    </div>
+  </div> 
+</ion-content>

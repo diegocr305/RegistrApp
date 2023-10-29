@@ -1,0 +1,22 @@
+* {
+    --background: #ffffff; /* Cambia el color de fondo aquí */
+  }
+
+.nombCarrera{
+    color: rgb(255, 255, 255);
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #1f1d6e;
+}
+
+.divAsignatura{
+    border: 2px solid black; 
+    margin-top: 10px;
+    h4{
+        color: black;
+    }
+    p{
+        color:black;
+    }
+}

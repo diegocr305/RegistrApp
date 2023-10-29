@@ -1,8 +1,8 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar> 
+  <ion-toolbar>
     <ion-title></ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button defaulthref="login" text=""></ion-back-button>
+    <ion-buttons slot="start" >
+      <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -11,25 +11,26 @@
   <ion-card-content>
     <h1 style="color: black;display: flex;
     align-items: center;
-    justify-content: center;">Login</h1>
-      <div>
-        <p>Usuario</p>
-        <ion-item class="border">
-          <ion-input class="animated-title" [(ngModel)]="user.usuario"  placeholder="usuario@duocuc.cl" type="email"></ion-input>
-        </ion-item>
-        <p>Contraseña</p>
-        <ion-item class="border">
-          <ion-input class="animated-title" [(ngModel)]="user.password" type="password"></ion-input>
-        </ion-item>
-      </div>
-      <div>
-        <a style="text-align: center;margin: 0;padding: 100"  (click)="recupContrasena()">¿Olvido su Contraseña?</a>
-      </div>
-      <div class="signin-btns"> 
-        <ion-button fill="solid" shape="round" class="animated-title loginbtn" (click)="Login(user)">INGRESAR</ion-button>  
-      </div>
-      <div class="img_cent ion-text-center ion-align-items-center" style="margin-top: 70px;">
-        <img src="assets/img/LOGO.png"   width="200" height="100" alt="">
-      </div>  
-    </ion-card-content>
+    justify-content: center;">Login Alumno</h1>
+    <div>
+      <p>Usuario</p>
+      <ion-item class="border">
+        <ion-input class="animated-title" [(ngModel)]="user.usuario" placeholder="usuario@duocuc.cl"
+          type="email"></ion-input>
+      </ion-item>
+      <p>Contraseña</p>
+      <ion-item class="border">
+        <ion-input class="animated-title" [(ngModel)]="user.password" type="password"></ion-input>
+      </ion-item>
+    </div>
+    <div>
+      <a style="text-align: center;margin: 0;padding: 100" (click)="recupContrasena()">¿Olvido su Contraseña?</a>
+    </div>
+    <div class="signin-btn">
+      <ion-button fill="solid" shape="round" class="animated-title loginbtn" (click)="Login(user)">INGRESAR</ion-button>
+    </div>
+    <div style="text-align: center;margin-top: 70px;">
+      <img src="assets/img/LOGO.png" width="200" height="100" alt="">
+    </div>
+  </ion-card-content>
 </ion-content>

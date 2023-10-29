@@ -37,10 +37,29 @@ export const routes: Routes = [
   {
     path: 'vista-alumno',
     loadComponent: () => import('./vista-alumno/vista-alumno.page').then( m => m.VistaAlumnoPage)
-  },  {
+  },
+  {
     path: 'vista-profe',
     loadComponent: () => import('./vista-profe/vista-profe.page').then( m => m.VistaProfePage)
   },
+  {
+    path: 'asistencia-alumno',
+    loadComponent: () => import('./asistencia-alumno/asistencia-alumno.page').then( m => m.AsistenciaAlumnoPage)
+  },
+  {
+    path: 'horario-alumno',
+    loadComponent: () => import('./horario-alumno/horario-alumno.page').then( m => m.HorarioAlumnoPage)
+  },
+  {
+    path: 'cursos',
+    loadComponent: () => import('./cursos/cursos.page').then( m => m.CursosPage)
+  },
+  {
+    path: 'asignatura-profe',
+    loadComponent: () => import('./asignatura-profe/asignatura-profe.page').then( m => m.AsignaturaProfePage)
+  },
+
+
 
 
 
