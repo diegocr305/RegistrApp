@@ -2,12 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
 import { carrera } from '../models/carrera';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
-import { Asignatura } from '../models/asignatura';
+import { asignatura } from '../models/asignatura';
 
 @Component({
   selector: 'app-cursos',
@@ -18,9 +18,9 @@ import { Asignatura } from '../models/asignatura';
 })
 export class CursosPage implements OnInit {
 
-  userInfo?: Alumno;
+  userInfo?: alumno;
   userCarrera?: carrera;
-  userAsignatura?:Asignatura[] = [];
+  userAsignatura?:asignatura[] = [];
 
   constructor(private router: Router, private activateRoute: ActivatedRoute,private userService:UsersService) {
     const state = this.router.getCurrentNavigation()?.extras.state;

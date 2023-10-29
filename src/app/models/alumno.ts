@@ -1,4 +1,4 @@
-export class Alumno {
+export class alumno {
     constructor(
         public Rut: string,
         public Nombre: string,
