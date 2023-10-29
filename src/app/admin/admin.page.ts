@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { UsersService } from '../services/userservice/users.service';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
 import { Observable, catchError, lastValueFrom, map, take } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -18,7 +18,7 @@ export class AdminPage implements OnInit {
 
   constructor(private router: Router,private userservice: UsersService) { }
 
-  NewUser: Alumno = {
+  NewUser: alumno = {
     Rut: '11111111-1',
     Nombre: 'Admin',
     edad: 20,
@@ -31,7 +31,7 @@ export class AdminPage implements OnInit {
   ngOnInit() {
   }
 
-  async onSubmit(alu: Alumno) {
+  async onSubmit(alu: alumno) {
     // const user_alumno = await lastValueFrom(this.userservice.getLogin());
     // console.log(user_alumno);
     // if (user_alumno) {

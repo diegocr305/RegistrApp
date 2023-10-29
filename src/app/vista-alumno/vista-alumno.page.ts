@@ -3,7 +3,9 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, PopoverController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
+import { UsersService } from '../services/userservice/users.service';
+import { catchError, lastValueFrom } from 'rxjs';
 @Component({
   selector: 'app-vista-alumno',
   templateUrl: './vista-alumno.page.html',
@@ -13,39 +15,44 @@ import { Alumno } from '../models/alumno';
 })
 export class VistaAlumnoPage implements OnInit {
   
-  userInfo?: Alumno;
-
-  constructor(private router: Router, private activateRoute: ActivatedRoute) {
+  userInfo?: alumno;
+  constructor(private router: Router, private activateRoute: ActivatedRoute, private usersService:UsersService) {
     const state = this.router.getCurrentNavigation()?.extras.state;
     if (state && state['userInfo']) {
       this.userInfo = state['userInfo'];
     }
   }
 
-  ngOnInit() {
-    console.log(this.userInfo)
+  async ngOnInit() {
+    console.log(this.userInfo?.Rut);
+  }
+
+  isCardExpanded = false;
+
+  toggleCard() {
+    this.isCardExpanded = !this.isCardExpanded;
   }
 
 
-  perfilAlum(){
+  perfilAlum(){  
     this.router.navigate(['/perfil-alumno'], { state: { userInfo:this.userInfo}})
   }
 
-  verHorario() {
-    // Suponiendo que tienes una página 'horario-alumno'
-    this.router.navigate(['/horario-alumno'], { state: { userInfo:this.userInfo } });
-}
+  asistenAlum(){
+    this.router.navigate(['/asistencia-alumno'], { state: { userInfo:this.userInfo}})
+  }
 
-verAsistencia() {
-    // Suponiendo que tienes una página 'asistencia-alumno'
-    this.router.navigate(['/asistencia-alumno'], { state: { userInfo:this.userInfo } });
-}
+  horarioAlum(){
+    this.router.navigate(['/horario-alumno'], { state: { userInfo:this.userInfo}})
+  }
 
-verCursos() {
-    // Suponiendo que tienes una página 'cursos-alumno'
-    this.router.navigate(['/cursos'], { state: { userInfo:this.userInfo } });
-}
+  cursosAlum(){
+    this.router.navigate(['/cursos'], { state: { userInfo:this.userInfo}})
+  }
 
 
-
+  //Redirigir
+  home(){
+    this.router.navigate(['/home'])
+  }
 }

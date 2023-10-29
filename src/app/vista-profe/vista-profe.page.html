@@ -1,13 +1,24 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>vistaProfesor</ion-title>
-  </ion-toolbar>
+<ion-header>
+  <ion-card-header>
+    <div style="text-align: center;">
+      <img src="assets/img/LOGO.png" width="120" height="50" alt="">
+      <img src="assets/img/user.png" style="position: absolute; right: 0; margin-right: 20px; margin-top: 10px;"
+        (click)="toggleCard()">
+      <ion-card *ngIf="isCardExpanded" style="position: absolute;right: 0;margin-right: 20px; margin-top: 17px;">
+        <p (click)="home()">Cerrar sesión</p>
+      </ion-card>
+    </div>
+  </ion-card-header>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">vistaProfesor</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card-content>
+    <div style="margin-top:30px">
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="iniciarAsistencia()">Iniciar Asistencia</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="historialAsistencias()">Historial</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="configuracion()">Configuración</ion-button>      
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="ayudaSoporte()">Ayuda/Soporte</ion-button>
+      <ion-button fill="solid" shape="round" class="animated-title social-btn" (click)="perfilProfe()">Perfil</ion-button>
+    </div>
+  </ion-card-content>
 </ion-content>

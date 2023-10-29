@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
 import { carrera } from '../models/carrera';
 import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../services/userservice/users.service';
@@ -18,7 +18,7 @@ import { asignatura } from '../models/asignatura';
 })
 export class CursosPage implements OnInit {
 
-  userInfo?: Alumno;
+  userInfo?: alumno;
   userCarrera?: carrera;
   userAsignatura?:asignatura[] = [];
 

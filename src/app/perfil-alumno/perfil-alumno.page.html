@@ -1,39 +1,37 @@
-<ion-header>
+<ion-header class="ion-no-border">
   <ion-toolbar>
     <ion-title>Perfil del Alumno</ion-title>
+    <ion-buttons slot="start" >
+      <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <ion-card>
-    <ion-card-header>
-      <ion-card-subtitle>RUT: {{ alumno.Rut }}</ion-card-subtitle>
-      <ion-card-title>{{ alumno.Nombre }}</ion-card-title>
+    <ion-card-header style="color: black;">
+      <ion-card-title style="color: black;">Nombre: {{userInfo?.Nombre}}</ion-card-title>
+      <ion-label >Carrera: {{userCarrera?.nombre_carrera}}</ion-label>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-list>
+      <ion-list style="background-color:rgb(255, 255, 255)">
         <ion-item>
-          <ion-label position="stacked">Edad</ion-label>
-          <ion-input type="number" [value]="alumno.edad" disabled></ion-input>
+          <ion-label position="stacked" style="color: black;">Rut: {{userInfo?.Rut}}</ion-label>
         </ion-item>
-
         <ion-item>
-          <ion-label position="stacked">Correo Electrónico</ion-label>
-          <ion-input type="email" [value]="alumno.correo" disabled></ion-input>
+          <ion-label position="stacked" style="color: black;">Edad: {{userInfo?.edad}}</ion-label>
         </ion-item>
-
         <ion-item>
-          <ion-label position="stacked">Teléfono</ion-label>
-          <ion-input type="tel" [value]="alumno.telefono" disabled></ion-input>
+          <ion-label position="stacked" style="color: black;">Correo Electrónico: {{userInfo?.correo}}</ion-label>
         </ion-item>
-
         <ion-item>
-          <ion-label position="stacked">ID Carrera</ion-label>
-          <ion-input type="text" [value]="alumno.id_carrera" disabled></ion-input>
+          <ion-label position="stacked" style="color: black;">Teléfono: {{userInfo?.telefono}}</ion-label>
         </ion-item>
       </ion-list>
     </ion-card-content>
   </ion-card>
-  <ion-button expand="full" color="primary">Editar Perfil</ion-button>
+  <div class="signin-btn">
+    <ion-button fill="solid" shape="round" class="animated-title color-btn" >Editar</ion-button>
+  </div>
 </ion-content>

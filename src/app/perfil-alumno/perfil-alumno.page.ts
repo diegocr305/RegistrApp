@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
 import { UsersService } from '../services/userservice/users.service';
+import { catchError, lastValueFrom } from 'rxjs';
+import { carrera } from '../models/carrera';
 
 
 @Component({
@@ -15,40 +17,23 @@ import { UsersService } from '../services/userservice/users.service';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class PerfilAlumnoPage implements OnInit {
-  alumno!: Alumno;//error en alumno
+  
+  userInfo?: alumno;
+  userCarrera?: carrera;
 
-  constructor(private router: Router, 
-    private route: ActivatedRoute, 
-    private userservice: UsersService) { }
-
-    ngOnInit() {
-      this.route.queryParams.subscribe(params => {
-        const navigation = this.router.getCurrentNavigation();
-        if (navigation && navigation.extras && navigation.extras.state) {
-          this.alumno = navigation.extras.state['userInfo'];
-          if (this.alumno && this.alumno['Rut']) {
-            this.getAlumnoPerfil(this.alumno['Rut']); // Esta función la deberías tener definida en el mismo componente o en algún servicio.
-          }
-        }
-      });
+  constructor(private router: Router, private activateRoute: ActivatedRoute,private userService:UsersService) {
+    const state = this.router.getCurrentNavigation()?.extras.state;
+    if (state && state['userInfo']) {
+      this.userInfo = state['userInfo'];
     }
-    
-
-
-getAlumnoPerfil(rut: string) {
-  console.log("Rut solicitado:", rut);
-
-  this.userservice.getPerfilAlumno(this.alumno.Rut).subscribe(
-    (data: Alumno) => {
-      this.alumno = data;
-      console.log("Datos del alumno obtenidos:", data);
-    },
-    (error) => {
-      console.error('Error al obtener el perfil del alumno:', error);
-    }
-  );
-}
-  Volver(){
-
   }
+
+  async ngOnInit() {
+    console.log(this.userInfo);
+    const user_carrera = await lastValueFrom(this.userService.getCarrera(this.userInfo?.id_carrera));
+    console.log(user_carrera); 
+    this.userCarrera = user_carrera;
+  }
+  
+
 }

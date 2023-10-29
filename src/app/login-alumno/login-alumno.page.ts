@@ -3,12 +3,10 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, ToastController } from '@ionic/angular';
 import { NavigationExtras, Router } from '@angular/router';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
 import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
 import { userLogin } from '../models/userLogin';
-
-
 
 @Component({
   selector: 'app-login-alumno',
@@ -18,11 +16,6 @@ import { userLogin } from '../models/userLogin';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class LoginAlumnoPage implements OnInit {
-
-  // ListUsuario: Alumno[] = [
-  //   new Alumno('12345678-k', 'Pedro', 'Perez', '20/03/1997', 'Ingeniería en Informática', 'pe.perez@duocuc.cl', 'Vespertino', 'Modelamiento de base de datos', '123'),
-  //   new Alumno('87654321-k', 'Matias', 'Varga', '25/12/1990', 'Ingeniería Civil Electrónica', 'ma.vargas@duocuc.cl', 'Diurno', 'Matematica aplicada', '123'),
-  // ];
 
   user = {
     usuario: "",
@@ -41,21 +34,6 @@ export class LoginAlumnoPage implements OnInit {
         console.log(data.edad)
       }
     );
-
-
-    // for (let i = 0; i < this.ListUsuario.length; i++) {
-    //   if (this.ListUsuario[i].correoElectronico === this.user.usuario && this.ListUsuario[i].contrasena == this.user.password) {
-    //     console.log(this.ListUsuario[i]);
-    //     let navigationExtras: NavigationExtras = {
-    //       state: {
-    //         user: this.ListUsuario[i]
-    //       }
-    //     }
-    //     this.router.navigate(['/perfil-alumno'], navigationExtras);
-    //   } else {
-    //     this.presentToast("Usuario o contraseña incorrecta")
-    //   }
-    // }
   }
 
   async Login(userLoginInfo: userLogin) {
@@ -91,13 +69,6 @@ export class LoginAlumnoPage implements OnInit {
     (await toast).present();// pausa la ejecución del código en ese punto hasta que la operación toast.present() haya terminado
     (await toast).onDidDismiss();
   }
-
-  home() {
-    this.router.navigate(['/home']);
-  }
-
-
-
   //   actualizarContrasena(usuario: string, newPassword: string){
   //     for(let i = 0; i < this.ListUsuario.length; i++){
   //       console.log(usuario);  
@@ -118,6 +89,10 @@ export class LoginAlumnoPage implements OnInit {
   recupContrasena(){
     this.router.navigate(['/recuperarcontrasena']);
 
+  }
+
+  home() {
+    this.router.navigate(['/home']);
   }
 
 }
