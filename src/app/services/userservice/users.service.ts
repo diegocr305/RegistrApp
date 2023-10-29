@@ -67,7 +67,31 @@ getHorarioAlumno(rut: string): Observable<any> {
     })
   );
 }
+//Carrera
+getCarrera(id: number | undefined){
+  return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Carrera?id_carrera=eq.'+ id, { headers: this.supebaseheards }).pipe(
+  map((user) => {
+      console.log("Map", user[0])
+      return user[0]
+    }), catchError((err) => {
+      console.log(err)
+      return err;
+    })
+  );
+}
 
+//Asignatura
 
+getAsignaturas(rut: string | undefined){
+  return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Asignatura?rut_alumno=eq.'+ rut, { headers: this.supebaseheards }).pipe(   
+    catchError((error) => {
+      console.error('Error al encontrar asignatura', error);
+      return error;
+    })
+  );
+}
 
 }
+
+
+

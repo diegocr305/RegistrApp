@@ -43,7 +43,7 @@ verAsistencia() {
 
 verCursos() {
     // Suponiendo que tienes una página 'cursos-alumno'
-    this.router.navigate(['/cursos-alumno'], { state: { userInfo:this.userInfo } });
+    this.router.navigate(['/cursos'], { state: { userInfo:this.userInfo } });
 }
 
 

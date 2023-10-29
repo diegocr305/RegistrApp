@@ -42,7 +42,8 @@ export const routes: Routes = [
     path: 'vista-profe',
     loadComponent: () => import('./vista-profe/vista-profe.page').then( m => m.VistaProfePage)
 
-  },  {
+  },
+  {
     path: 'horario-alumno',
     loadComponent: () => import('./horario-alumno/horario-alumno.page').then( m => m.HorarioAlumnoPage)
   },
@@ -50,9 +51,10 @@ export const routes: Routes = [
     path: 'asistencia-alumno',
     loadComponent: () => import('./asistencia-alumno/asistencia-alumno.page').then( m => m.AsistenciaAlumnoPage)
   },
+
   {
-    path: 'cursos-alumno',
-    loadComponent: () => import('./cursos-alumno/cursos-alumno.page').then( m => m.CursosAlumnoPage)
+    path: 'cursos',
+    loadComponent: () => import('./cursos/cursos.page').then( m => m.CursosPage)
   },
 
 
