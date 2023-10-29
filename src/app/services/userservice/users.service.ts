@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, catchError, map } from 'rxjs';
 import { userLogin } from 'src/app/models/userLogin';
-import { Alumno } from 'src/app/models/alumno';
+import { alumno } from 'src/app/models/alumno';
 
 
 @Injectable({
@@ -30,7 +30,7 @@ export class UsersService {
 
 
 
-  AgregarAlumno(newUser: Alumno): Observable<any> {
+  AgregarAlumno(newUser: alumno): Observable<any> {
     // Define los datos del nuevo usuario que deseas agregar
     console.log(newUser)
     return this._httpcliente.post<any>(this.URL_SUPEBASE + 'Alumno',newUser, { headers: this.supebaseheards }).pipe(

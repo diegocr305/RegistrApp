@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
 import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
 import { carrera } from '../models/carrera';
@@ -18,7 +18,7 @@ import { carrera } from '../models/carrera';
 })
 export class PerfilAlumnoPage implements OnInit {
   
-  userInfo?: Alumno;
+  userInfo?: alumno;
   userCarrera?: carrera;
 
   constructor(private router: Router, private activateRoute: ActivatedRoute,private userService:UsersService) {

@@ -9,4 +9,3 @@ export class Alumno {
         public id_carrera: number,
     ) {}
 }
-

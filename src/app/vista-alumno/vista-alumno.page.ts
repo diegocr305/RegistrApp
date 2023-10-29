@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule, PopoverController } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Alumno } from '../models/alumno';
+import { alumno } from '../models/alumno';
 import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
 @Component({
@@ -15,7 +15,7 @@ import { catchError, lastValueFrom } from 'rxjs';
 })
 export class VistaAlumnoPage implements OnInit {
   
-  userInfo?: Alumno;
+  userInfo?: alumno;
   constructor(private router: Router, private activateRoute: ActivatedRoute, private usersService:UsersService) {
     const state = this.router.getCurrentNavigation()?.extras.state;
     if (state && state['userInfo']) {
