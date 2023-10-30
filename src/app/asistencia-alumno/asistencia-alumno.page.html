@@ -5,9 +5,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">asistenciaAlumno</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div *ngIf="userRegistro">
+    <div *ngFor="let registro of userRegistro">
+      <div class="">
+        <p>Estado de asistencia: {{ registro.estado_asistencia }}</p>
+        <p>Fecha: {{ registro.fecha }}</p>
+        <p>Hora: {{ registro.hora}}</p>
+        <p>Rut alumno: {{ registro.rut_alumno }}</p>
+        <!-- Agrega aquí más campos del registro que desees mostrar -->
+      </div>
+    </div>
+  </div>
 </ion-content>

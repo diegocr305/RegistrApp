@@ -66,4 +66,28 @@ export class UsersService {
     );
   }
 
+
+  //Registro Asistencia
+
+  getRegistroAsistencia(rut: string | undefined ){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'RegistroAsistencia?rut_alumno=eq.'+ rut, { headers: this.supebaseheards }).pipe(   
+      catchError((error) => {
+        console.error('Error al encontrar Registro de asistencia ', error);
+        return error;
+      })
+    );
+
+  }
+
+  //Seccion
+  getSeccion(id_seccion: number | undefined ){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Seccion?id_seccion=eq.'+ id_seccion, { headers: this.supebaseheards }).pipe(   
+      catchError((error) => {
+        console.error('Error al encontrar Registro de asistencia ', error);
+        return error;
+      })
+    );
+
+  }
+
 }

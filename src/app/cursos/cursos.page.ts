@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../services/userservice/users.service';
 import { catchError, lastValueFrom } from 'rxjs';
 import { asignatura } from '../models/asignatura';
+import { registroAsistencia } from '../models/registroAsistencia';
 
 @Component({
   selector: 'app-cursos',
@@ -20,7 +21,7 @@ export class CursosPage implements OnInit {
 
   userInfo?: alumno;
   userCarrera?: carrera;
-  userAsignatura?:asignatura[] = [];
+  userAsignatura?:asignatura[] | undefined = [];
 
   constructor(private router: Router, private activateRoute: ActivatedRoute,private userService:UsersService) {
     const state = this.router.getCurrentNavigation()?.extras.state;
@@ -39,6 +40,7 @@ export class CursosPage implements OnInit {
     const user_asignatura = await lastValueFrom(this.userService.getAsignaturas(this.userInfo?.Rut));
     console.log(user_asignatura); 
     this.userAsignatura = user_asignatura;
+
   }
 
   home(nombreAsigna: string | undefined) {
