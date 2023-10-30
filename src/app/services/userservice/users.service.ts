@@ -66,4 +66,14 @@ export class UsersService {
     );
   }
 
+  getHorario(id_asignatura: number | undefined){
+    return this._httpcliente.get<any>(this.URL_SUPEBASE + 'Horario?id_asignatura=eq.'+ id_asignatura, { headers: this.supebaseheards }).pipe(   
+      catchError((error) => {
+        console.error('Error al encontrar horario', error);
+        return error;
+      })
+    );
+  }
+
+
 }

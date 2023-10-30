@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Profesor } from '../models/profesor';
 
 @Component({
   selector: 'app-perfil-profesor',
@@ -12,15 +13,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   imports: [IonicModule, CommonModule, FormsModule]
 })
 export class PerfilProfesorPage implements OnInit {
-    userInfo: any | undefined;
-    profesor: any;
-    constructor(private router: Router) {
-      // Recupera los datos pasados desde la página de login
-      const navigation = this.router.getCurrentNavigation();
-      this.profesor = navigation?.extras.state?.['profesor'];
+    
+    profesor?: Profesor;
+    constructor(private router: Router, private activateRoute: ActivatedRoute) {
+      const state = this.router.getCurrentNavigation()?.extras.state;
+      if (state && state['profesor']) {
+        this.profesor = state['profesor'];
+      }
     }
   
+  
+  
     ngOnInit() {
-      console.log(this.userInfo)
+      console.log(this.profesor)
     }
 }

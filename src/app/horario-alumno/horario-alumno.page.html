@@ -1,13 +1,25 @@
-<ion-header [translucent]="true">
+<ion-header class="ion-no-border">
+
+
   <ion-toolbar>
-    <ion-title>horario-alumno</ion-title>
+    <p style="color: black;display: flex;
+    align-items: center;
+    justify-content: center;">Horario</p>
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="login" text="" style="color: rgb(0, 0, 0);"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">horario-alumno</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <div *ngIf="userHorario" >
+    <div *ngFor="let horario of userHorario ">
+      <div >
+        <p>Dia: {{  horario.dia_semana }}</p>
+        <p>Hora de inicio: {{  horario.hora_inicio }}</p>
+        <p>Hora de fin {{  horario.hora_fin }}</p>
+        <!-- Agrega aquí más campos del registro que desees mostrar -->
+      </div>
+    </div>
+  </div>
 </ion-content>

@@ -40,7 +40,7 @@ export class LoginprofesorPage implements OnInit {
     console.log(user_profesor);
     if (user_profesor) {
       console.log("Usuario existe...");
-      this.router.navigate(['/vista-profe'], { state: { userInfo: user_profesor } })
+      this.router.navigate(['/vista-profe'], { state: {profesor: user_profesor } })
     } else {
       //NO EXISTE
       console.log("Usuario no existe...");

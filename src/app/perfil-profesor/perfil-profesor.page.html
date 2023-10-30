@@ -1,34 +1,42 @@
 <!-- perfil-profesor.page.html -->
 <ion-header class="ion-no-border">
   <ion-toolbar>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaulthref="login" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-header class="ion-no-border">
+  <ion-toolbar>
     <ion-title>Perfil del Profesor</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="ion-text-center">
-    <h2>{{ profesor.nombre }}</h2>
+    <h2>{{ profesor?.Nombre }}</h2>
   </div>
 
   <ion-list>
     <ion-item>
       <ion-label>RUT:</ion-label>
-      <ion-text>{{ profesor.Rut }}</ion-text>
+      <ion-text>{{ profesor?.Rut }}</ion-text>
     </ion-item>
 
     <ion-item>
       <ion-label>Edad:</ion-label>
-      <ion-text>{{ profesor.edad }}</ion-text>
+      <ion-text>{{ profesor?.edad }}</ion-text>
     </ion-item>
 
     <ion-item>
       <ion-label>Teléfono:</ion-label>
-      <ion-text>{{ profesor.telefono }}</ion-text>
+      <ion-text>{{ profesor?.telefono }}</ion-text>
     </ion-item>
 
     <ion-item>
       <ion-label>Correo:</ion-label>
-      <ion-text>{{ profesor.correo }}</ion-text>
+      <ion-text>{{ profesor?.correo }}</ion-text>
     </ion-item>
   </ion-list>
 </ion-content>
